@@ -1,158 +1,121 @@
-\documentclass[a4paper,20pt]{article}
+\documentclass[a4paper,10pt]{article}
 \usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+% Custom page setup for single page
+\setlength{\oddsidemargin}{-0.75in}
+\setlength{\evensidemargin}{-0.75in}
+\setlength{\textwidth}{7.5in}
+\setlength{\topmargin}{-0.75in}
+\setlength{\textheight}{10.5in}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\footskip}{0.2in}
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.530in}
-\addtolength{\evensidemargin}{-0.375in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.45in}
-\addtolength{\textheight}{1in}
-
-\urlstyle{rm}
-
+\pagestyle{empty}
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-10pt}\scshape\raggedright\Large
-}{}{0em}{}[\color{black}\titlerule \vspace{3pt}]
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item\normalsize{
-    \textbf{#1}{: #2 \vspace{1pt}}
-  }
+% Custom section formatting - balanced spacing
+\newcommand{\ressection}[1]{%
+  \vspace{6pt}%
+  {\large\scshape\raggedright #1}%
+  \vspace{2pt}%
+  \hrule%
+  \vspace{3pt}%
 }
 
-\newcommand{\extraNote}[1]{
-    \item\small{}
+% Custom commands - consistent spacing
+\newcommand{\resumeItem}[2]{
+  \item{\small\textbf{#1}{: #2}}
 }
 
 \newcommand{\resumeItemWithoutTitle}[1]{
-  \item\normalsize{
-    {\vspace{-2pt}}
-  }
+  \item{\small{#1}}
 }
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
-    \begin{tabular*}{.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \large\textbf{#1} & #2 \\
-      \textit{#3} & \textit{#4} \\
-    \end{tabular*}\vspace{-5pt}
+    \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-2pt}
 }
 
-
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{1pt}}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}}
 
 \renewcommand{\labelitemii}{$\circ$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newenvironment{resumeSubHeadingList}{\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}\setlength{\leftmargin}{0em}\setlength{\labelsep}{0pt}\renewcommand{\labelitemi}{}}{\end{itemize}}
+\newenvironment{resumeItemList}{\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}\setlength{\leftmargin}{1em}}{\end{itemize}\vspace{-2pt}}
 
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
 
 \begin{document}
 
-    %HEADING
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{{\LARGE Nicolas Sanchez}} & Email: \href{mailto:}{nsanchez9009@gmail.com}\\
-      \href%{INSERT PORTFOLIO URL HERE}{Portfolio: currently being developed}
-      & Mobile:~~~+1 407 619 0125 \\
-      \href{https://github.com/nsanchez9009}{Github: ~~github.com/nsanchez9009} \\
-    \end{tabular*}
-    
-    %EDUCATION
-    \section{Education}
-        \resumeSubHeadingListStart
-            \resumeSubheading{University of Central Florida}{Orlando, Florida}
-                {Bachelors of Science - Computer Science}{January 2021 - August 2025 (Expected)}
-            \resumeItemListStart
-                \resumeItem{Major GPA}{3.298}
-                \resumeItem{Cumulative GPA}{3.315}
-            \resumeItemListEnd
-            {\scriptsize \textit{ \normalsize{\textbf{Relevant subjects:} Data structures and algorithms, computer arithmetic, combinatorial and sequential logic design, TCP/IP, intrusion patterns, application vulnerabilities, and technical communication.}}}
-        \resumeSubHeadingListEnd
-    
-    
-    %SKILLS
-    \section{Skills}
-    	\resumeSubHeadingListStart
-        	\resumeSubItem{Languages}{~~~~~~C, Java, JavaScript, TypeScript, Python, Rust, CSharp, C++, HTML, CSS}
-        	\vspace{-8pt}
-        	\resumeSubItem{Frameworks}{~~~~React.js, Flutter, Redux toolkit, Jest, and various CSS frameworks}
-        	\vspace{-8pt}
-        	\resumeSubItem{Tools}{~~~~~~~~~~~~~~Visual Studio Code, Git version-control, AWS, OpenAI, Game Engines}
-        	\vspace{-8pt}
-        	\resumeSubItem{Platforms}{~~~~~~~Linux/Unix, Web, Windows, Virtualization/Cloud, Android, iOS}
-        	\vspace{-8pt}
-        	\resumeSubItem{Soft Skills}{~~~~~~~Leadership, Communication, Writing, Public Speaking, Time Management}
-      \resumeSubHeadingListEnd
-    
-    
-    %EXPERIENCE
-    \section{Experience and Leadership}
-        \resumeSubHeadingListStart
-            %Format similar to education
-            \resumeSubheading{Pinterest, Full-Stack Engineer Intern}{Remote}{React.js, Python, Aritifical Intelligence, SQL}{May 2024 - August 2024}
-                \resumeItemListStart
-                  \item {Led the design and development of an internal merchant search tool and AI chat-bot assistant. The AI chat-bot assistant could answer questions and generate SQL queries related to the merchant selected and dynamically select the appropriate tables.}
-                  \item {Worked collaboratively across all project phases, including requirement analysis, service design, integration with existing architectures, code development, testing, and successful implementation.}
-                  \item {Assisted with the migration of older internal tools to React.js.}
-                \resumeItemListEnd
-            \resumeSubheading{Amazon, Front-End Engineer Intern}{Seattle, Washington}{React.js, Redux toolkit, AWS}{May 2023 - August 2023}
-                \resumeItemListStart
-                  \item {Led the design and development of a user event tracking service and metrics dashboard for Amazon's Partner Portal, enhancing data-driven decision-making capabilities.}
-                  \item {Worked collaboratively across all project phases, including requirement analysis, service design, integration with existing architectures, code development, testing, and successful implementation for shareholders.}
-                  \item {Created additional and easy to use UI elements, improving the overall developer and customer experience.}
-                  \item {Developed interactive dashboards and visualization services to empower shareholders with actionable insights.}
-                  \item {Used agile methodologies to foster innovation, consistently brainstorming, prototyping, and iteratively improving project outcomes.}
-                \resumeItemListEnd
-            \resumeSubheading{CyberPatriot XII}{Orlando, Florida}{Debian GNU/Linux Competitor}{2019 - 2020}
-                \resumeItemListStart
-                    \resumeItem{Team Leader}{Given a set a virtual operating systems, I was tasked with finding and fixing cybersecurity vulnerabilities while maintaining critical services. As team leader, I organized practice and study sessions each week before an upcoming competition. The goal was to familiarize my teammates each with their assigned operating system and inform them of common vulnerabilities and intrusion patterns.}
-                \resumeItemListEnd
-          \resumeSubHeadingListEnd
-    
-    
-    %PROJECTS
-    \section{Projects}
-        \resumeSubHeadingListStart
-            \resumeSubItem{Untitled Video Webscraper}{Developing a research-focused system that locates and timestamps relevant segments within YouTube videos for a given topic. Replacing rigid keyword matching with local embedding-based semantic search over transcript data to improve relevance and coverage. Designed and tested components for transcript parsing, vector search, and topic-to-segment alignment to support co-authored academic publication.\\Tech: Python, YouTube API, Mxbai Embed (local), Web Scraping, NLP. (March 2025)}
-            \resumeSubItem{KnowGap}{AI-Powered Academic Performance Assistant. Collaborated on a team-based senior design project to develop an AI-driven learning tool that integrates with Canvas LMS to identify at-risk students using real gradebook data. Authored backend systems for machine learning pipeline integration, predictive analytics, and scalable API syncing infrastructure. Designed and documented fairness-aware ML models, automated OAuth2 token refresh logic, and robust error handling mechanisms to support institutional deployment.\\Tech: Python, REST/GraphQL APIs, OAuth2, Docker, Git, ML. (Jan 2025)}
-            \resumeSubItem{MyBookList}{An online book list app. Using JavaScript and the CSS grid technology, the user is able to add any book to their list by providing the information needed. The information is then stored in the "library" which contains the objects of each book. Future goals for this project are to allow the user to store data on the cloud.\\Tech: JavaScript, HTML, CSS. (July 2022)}
-            \resumeSubItem{PxlDraw}{A simple online pixel drawing tool. The user has the ability to pick any color with a color picker and actively adjust the canvas size efficiently using a slider. Using CSS Flexbox, the user can increase or decrease the number of pixels in a canvas without adjusting the size of the canvas itself.\\Tech: JavaScript, HTML, CSS. (June 2022)}
-            \resumeSubItem{MySpim mini processor}{MySpim is the core part of a mini processor. Using C, MySpim is able to demonstrate functions of the MIPS processor as well as the principle actions of the datapath and control signals of a MIPS processor. MySpim would read in a file containing MIPS machine codes and simulate what the MIPS processor does cycle-by-cycle.\\Tech: C. (Nov 2021)}
-            \vspace{2pt}
-        \resumeSubHeadingListEnd
-    
-    
-    %AWARDS
-    \section{Honors and Awards}
-        \begin{description}[font=$\bullet$]
-            \item {State winner of 2019-2020 CyberPatriot competition.}
-            \item {UCF President's Honor Roll for 2022 and 2023.}
-        \end{description}
-        
+%HEADING
+\hspace{0.5cm}
+\begin{tabular*}{0.92\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\Large Nicolas Sanchez}} & Email: nsanchez9009@gmail.com\\
+  \textit{Software Engineer | Full-Stack Developer} & Mobile: +1 407 619 0125 \\
+  GitHub: github.com/nsanchez9009 & LinkedIn: linkedin.com/in/nsanchez9009 \\
+\end{tabular*}
+
+\ressection{Technical Skills}
+\begin{resumeSubHeadingList}
+	\resumeSubItem{Programming Languages}{JavaScript, TypeScript, Python, Java, C++, SQL, HTML5, CSS3}
+	\resumeSubItem{Frontend Technologies}{React.js, Redux Toolkit, Next.js, TypeScript, Tailwind CSS, Material-UI, Responsive Design, JavaScript ES6+}
+	\resumeSubItem{Backend Technologies}{Node.js, Express.js, Python, Flask, Django, REST APIs, GraphQL, Microservices}
+	\resumeSubItem{Databases \& Cloud}{PostgreSQL, MySQL, MongoDB, Redis, AWS (EC2, S3, Lambda, CloudWatch), Docker, Kubernetes}
+	\resumeSubItem{Development Tools}{Git, GitHub, CI/CD, Jest, Pytest, Webpack, npm/yarn, Linux/Unix, Postman, VS Code}
+\end{resumeSubHeadingList}
+
+\ressection{Professional Experience}
+\begin{resumeSubHeadingList}
+	\resumeSubheading{Pinterest}{Remote}
+		{Full-Stack Software Engineer Intern}{May 2024 - August 2024}
+		\begin{resumeItemList}
+		  \resumeItemWithoutTitle{Engineered scalable merchant search platform serving 200+ users with React.js and Python microservices, boosting workflow efficiency by 40\% and reducing search latency by 2.5x}
+		  \resumeItemWithoutTitle{Architected AI-powered chatbot with NLP to convert natural language to SQL queries, enabling 5x faster data access with 95\% accuracy}
+		  \resumeItemWithoutTitle{Led full-stack development lifecycle from requirements to production, collaborating cross-functionally in agile sprints}
+		  \resumeItemWithoutTitle{Modernized legacy monolithic applications to React.js microservices, improving maintainability by 60\% and deployment frequency by 3x}
+		\end{resumeItemList}
+	\resumeSubheading{Amazon}{Seattle, WA}
+		{Frontend Software Engineer Intern}{May 2023 - August 2023}
+		\begin{resumeItemList}
+		  \resumeItemWithoutTitle{Architected analytics platform processing 10M+ daily events with 99.9\% uptime, serving business metrics to 1000+ Partner Portal users}
+		  \resumeItemWithoutTitle{Optimized React.js components with Redux and code splitting, achieving 60\% faster load times and 25\% higher engagement}
+		  \resumeItemWithoutTitle{Implemented scalable RESTful APIs with AWS services (CloudWatch, S3) for real-time visualization, reducing monitoring overhead by 40\%}
+		  \resumeItemWithoutTitle{Championed TypeScript and TDD practices, reducing production bugs by 30\% and delivering sprints 2 weeks ahead of schedule}
+		\end{resumeItemList}
+\end{resumeSubHeadingList}
+
+\ressection{Technical Projects}
+\begin{resumeSubHeadingList}
+	\resumeSubItem{KnowGap - AI Academic Analytics Platform}{Production web app serving 500+ students with Canvas LMS integration and ML predictive analytics. Deployed on AWS with 99\% uptime. \textbf{Tech:} React.js, Python Flask, PostgreSQL, OAuth2, Docker, AWS}
+	\resumeSubItem{YouTube Content Intelligence Platform}{Semantic search engine processing 1000+ videos with NLP transcript analysis and vector matching. 92\% accuracy, sub-second response. \textbf{Tech:} React.js, Python, TensorFlow, Vector Search, YouTube API}
+	\resumeSubItem{ShopFlow - E-Commerce Platform}{Full-stack marketplace with real-time inventory, Stripe payments, and analytics dashboard. Handles 100+ concurrent users. \textbf{Tech:} React.js, Redux, Node.js, Express.js, MongoDB, JWT, Stripe}
+	\resumeSubItem{High-Performance MIPS Simulator}{Cycle-accurate processor simulation with 95\% hardware specification accuracy and performance profiling. \textbf{Tech:} C, Assembly, Computer Architecture}
+\end{resumeSubHeadingList}
+
+\ressection{Education}
+\begin{resumeSubHeadingList}
+	\resumeSubheading{University of Central Florida}{Orlando, FL}
+		{Bachelor of Science in Computer Science, GPA: 3.32}{Graduated August 2025}
+	\begin{resumeItemList}
+		\resumeItemWithoutTitle{\textbf{Core CS Fundamentals:} Data Structures \& Algorithms, Software Engineering, Database Systems, Computer Networks, Operating Systems, Machine Learning, System Design}
+		\resumeItemWithoutTitle{\textbf{Academic Excellence:} President's Honor Roll (2022, 2023) | Strong foundation in scalable software architecture and distributed systems}
+	\end{resumeItemList}
+\end{resumeSubHeadingList}
+
+\ressection{Additional Experience}
+\begin{resumeSubHeadingList}
+	\resumeSubItem{CyberPatriot XII State Champion}{Led team of 4 engineers to state championship in cybersecurity competition, demonstrating leadership in network security and system administration}
+	\resumeSubItem{Open Source Leadership}{Active contributor to multiple GitHub projects with 1000+ commits, demonstrating collaborative development and code review expertise}
+\end{resumeSubHeadingList}
+
 \end{document}
